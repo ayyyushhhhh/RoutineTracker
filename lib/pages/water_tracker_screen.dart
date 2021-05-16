@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:routinetracker/models/water_tracker_model.dart';
+import 'package:intl/intl.dart';
+import 'package:routinetracker/blocs/water_tracker_model.dart';
 import 'package:routinetracker/settings/prefrences.dart';
 import 'package:routinetracker/widgets/container_clipper.dart';
 import 'package:routinetracker/widgets/goal_setter_container.dart';
@@ -14,14 +15,33 @@ class WaterTrackerScreen extends StatefulWidget {
 }
 
 class _WaterTrackerScreenState extends State<WaterTrackerScreen> {
-  final WaterTrackerModel waterTrackerModel = WaterTrackerModel();
+  final WaterTrackerBloc waterTrackerModel = WaterTrackerBloc();
   double intake;
   double goal;
+
   @override
   void initState() {
     super.initState();
+    resetData();
     intake = Prefrences.getIntake();
     goal = Prefrences.getGoal();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    waterTrackerModel.dispose();
+  }
+
+  void resetData() {
+    var date = DateTime.parse(Prefrences.getDate());
+    String formattedDate = DateFormat("dd-MM-yyyy").format(date).toString();
+    String currentDate =
+        DateFormat("dd-MM-yyyy").format(DateTime.now()).toString();
+    if (formattedDate != currentDate) {
+      Prefrences.saveDate(DateTime.now().toString());
+      Prefrences.saveIntake(0);
+    }
   }
 
   @override

@@ -33,4 +33,19 @@ class Prefrences {
     }
     return goal;
   }
+
+  static String getDate() {
+    String date = preferences.getString("currentDate");
+    if (date == null) {
+      return DateTime.now().toString();
+    }
+    return date;
+  }
+
+  static void saveDate(String date) async {
+    if (date == null) {
+      date = DateTime.now().toString();
+    }
+    preferences.setString("currentDate", date);
+  }
 }

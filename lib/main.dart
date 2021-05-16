@@ -4,6 +4,7 @@ import 'package:routinetracker/settings/prefrences.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  // ignore: await_only_futures
   await Prefrences.init();
   runApp(MyApp());
 }
