@@ -4,8 +4,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:routinetracker/blocs/water_tracker_model.dart';
 import 'package:routinetracker/settings/prefrences.dart';
-import 'package:routinetracker/widgets/container_clipper.dart';
-import 'package:routinetracker/widgets/goal_setter_container.dart';
+import 'package:routinetracker/widgets/waterTracker/container_clipper.dart';
+import 'package:routinetracker/widgets/waterTracker/goal_setter_container.dart';
 import 'package:routinetracker/widgets/radial_progress_indicator.dart';
 
 // ignore: must_be_immutable

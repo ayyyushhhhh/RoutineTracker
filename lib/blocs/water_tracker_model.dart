@@ -1,6 +1,6 @@
 import 'dart:async';
 
-class WaterTrackerModel {
+class WaterTrackerBloc {
   StreamController<double> _goalStreamController = StreamController<double>();
   StreamController<double> _intakeStreamController =
       StreamController<double>.broadcast();
