@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:routinetracker/model/periods.dart';
-import 'package:routinetracker/pages/habit_tracker_screen.dart';
-import 'package:routinetracker/pages/period_tracker_screen.dart';
-import 'package:routinetracker/pages/water_tracker_screen.dart';
+import 'package:routinetracker/pages/Home_page.dart';
 import 'package:routinetracker/settings/prefrences.dart';
 
 Future<void> main() async {
@@ -21,9 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: ChangeNotifierProvider(
-          create: (BuildContext context) => Periods(),
-          child: PeriodTrackerScreen()),
+      home: HomePage(),
     );
   }
 }

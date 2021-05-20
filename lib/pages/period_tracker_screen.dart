@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:routinetracker/model/periods.dart';
 import 'package:routinetracker/settings/prefrences.dart';
@@ -35,7 +34,6 @@ class PeriodTrackerScreen extends StatelessWidget {
     data.updatePeriodsFirstDay(DateTime.now().toString());
     Prefrences.savePeriodDayDate(DateTime.now().toString());
     data.updatePeriodDay();
-
     data.updateRemainingDays();
   }
 
