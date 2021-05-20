@@ -67,7 +67,7 @@ class _WaterTrackerScreenState extends State<WaterTrackerScreen> {
                             initialData: goal,
                             builder: (context, snapshot) {
                               goal = snapshot.data;
-                              Prefrences.saveIntake(intake);
+                              Prefrences.saveGoal(goal);
                               return Container(
                                 height: screenHeight / 2,
                                 width: screenWidth,
