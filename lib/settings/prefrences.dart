@@ -37,6 +37,7 @@ class Prefrences {
   static String getDate() {
     String date = preferences.getString("currentDate");
     if (date == null) {
+      Prefrences.saveDate(DateTime.now().toString());
       return DateTime.now().toString();
     }
     return date;
